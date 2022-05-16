@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import nz.ac.auckland.se281.a3.bot.Bot;
+import nz.ac.auckland.se281.a3.bot.StratFactory;
+import nz.ac.auckland.se281.a3.bot.Strats;
 import nz.ac.auckland.se281.a3.dealer.Dealer;
 
 /**
@@ -79,9 +81,10 @@ public class BlackJack {
 	 * Task1
 	 */
 	protected void initBots() {
-		Bot bot1 = new Bot("Bot1");
-		Bot bot2 = new Bot("Bot2");
-		// String botStrategyString = getBotStrategy(); // UNCOMMENT THIS
+
+		String botStrategyString = getBotStrategy(); // UNCOMMENT THIS
+		Bot bot1 = new Bot("Bot1",botStrategyString);
+		Bot bot2 = new Bot("Bot2",botStrategyString);
 		// create and set Bots strategy here
 		players.add(bot1);
 		players.add(bot2);

@@ -2,24 +2,33 @@ package nz.ac.auckland.se281.a3.bot;
 
 import nz.ac.auckland.se281.a3.Hand;
 import nz.ac.auckland.se281.a3.Player;
+import java.util.Random;
 
 /**
  * you should change this class for TASK 1
  */
 public class Bot extends Player {
+	private String strategyy;
+	private Strats strategy;
 
-	public Bot(String name) {
+	public Bot(String name, String strategyy) {
 		super(name);
+
+
+		this.strategyy = strategyy;
+		this.strategy = StratFactory.createStrat(strategyy);
 	}
 
 	@Override
 	public Action decideAction(Hand hand) {
-		return Action.HOLD;
+
+
+		return strategy.decideAction(hand);
 	}
 
 	@Override
 	public int makeABet() {
-		return 1;
+		return strategy.makeABet();
 	}
 
 }
