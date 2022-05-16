@@ -96,7 +96,9 @@ public class BlackJack {
 	 */
 	protected void initDealer() {
 		// set the initial strategy using the Strategy pattern
-		dealer = new Dealer("Dealer");
+		dealer = new Dealer("Dealer", players);
+
+
 	}
 
 	/**
