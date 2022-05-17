@@ -8,15 +8,17 @@ import java.util.List;
 
 public class DealerStratFac {
 
-    public static DealerStrategies createStrat(List<Player> players) {
+    public static DealerStrategies createDealerStrat(List<Player> players) {
         for (Participant pl: players) {
+            System.out.println(pl.netWins+"\n net wins");
+
             if (pl.netWins > 2) {
                 return new NetWinner();
-            }
-            else {
-                return new HighestBidder();
-            }
+            }}
+
+        return new HighestBidder();
+
         }
-        return null;
+
     }
-}
+

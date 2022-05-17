@@ -20,7 +20,7 @@ public class Dealer extends Participant {
 		super(name);
 
 		this.players = players;
-		this.dealerStrategies = DealerStratFac.createStrat(players);
+		this.dealerStrategies = DealerStratFac.createDealerStrat(players);
 
 
 	}
@@ -28,7 +28,7 @@ public class Dealer extends Participant {
 
 	@Override
 	public Action decideAction(Hand hand) {
-		return dealerStrategies.decideAction(hand);
+		return dealerStrategies.decideAction(hand, players);
 	}
 
 }
