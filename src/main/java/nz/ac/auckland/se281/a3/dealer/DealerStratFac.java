@@ -12,7 +12,7 @@ public class DealerStratFac {
         for (Participant pl: players) {
             System.out.println(pl.netWins+"\n net wins");
 
-            if (pl.netWins > 2) {
+            if (pl.netWins >= 2) {
                 return new NetWinner();
             }}
 

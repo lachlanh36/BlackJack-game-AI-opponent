@@ -107,18 +107,24 @@ public class BlackJack {
 	 */
 	protected void printAndUpdateResults(int round) {
 		int highestScore=0;
-		Participant winner=null;
+		int winner=0;
+		System.out.println("round is over");
+		int index=0;
 		for(Participant p: players){
-			p.losses+=0;
+
+			p.losses+=1;
 			if(p.getHand().getScore()>highestScore&&p.getHand().getScore()<=21) {
 				highestScore=p.getHand().getScore();
-				winner=p;
+				winner=index;
 
 			}
+			index++;
 		}
-		if (winner.getHand().getScore()>dealer.getHand().getScore()) {
-			winner.wins = 1 + winner.wins;
-			winner.losses -= 1;
+		System.out.println("dealer score is"+dealer.getHand().getScore());
+		if (players.get(winner).getHand().getScore()>dealer.getHand().getScore()||dealer.getHand().getScore()>21) {
+			System.out.println("this is going through lol wacko\n\n");
+			players.get(winner).wins = 1 + players.get(winner).wins;
+			players.get(winner).losses -= 1;
 		}
 		for(Participant p: players){
 			p.netWins=p.wins-p.losses;

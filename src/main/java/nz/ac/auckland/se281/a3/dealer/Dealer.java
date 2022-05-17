@@ -14,13 +14,13 @@ import java.util.List;
 public class Dealer extends Participant {
 
 	private final List<Player> players;
-	private final DealerStrategies dealerStrategies;
+	public DealerStrategies dealerStrategies;
 
 	public Dealer(String name, List<Player> players) {
 		super(name);
 
 		this.players = players;
-		this.dealerStrategies = DealerStratFac.createDealerStrat(players);
+
 
 
 	}
@@ -28,7 +28,10 @@ public class Dealer extends Participant {
 
 	@Override
 	public Action decideAction(Hand hand) {
+		this.dealerStrategies = DealerStratFac.createDealerStrat(players);
 		return dealerStrategies.decideAction(hand, players);
+
+
 	}
 
 }
