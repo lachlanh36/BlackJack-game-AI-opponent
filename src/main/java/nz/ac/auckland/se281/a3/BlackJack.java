@@ -105,6 +105,7 @@ public class BlackJack {
 	 * TODO This method prints and updates the results (wins and losses) you should
 	 * change this method for Task 2 and Task 3
 	 */
+	int round = 1;
 	protected void printAndUpdateResults(int round) {
 		int highestScore=0;
 		int winner=0;
@@ -113,31 +114,37 @@ public class BlackJack {
 		for(Participant p: players){
 
 			p.losses+=1;
-			if(p.getHand().getScore()>highestScore&&p.getHand().getScore()<=21) {
+			if(p.getHand().getScore()>dealer.getHand().getScore()&&p.getHand().getScore()<=21||dealer.getHand().getScore()>21||p.getHand().isBlackJack()&&!dealer.getHand().isBlackJack()) {
 				highestScore=p.getHand().getScore();
 				winner=index;
+				p.wins +=1;
+				p.losses -= 1;
+				System.out.println("Round " + round+": "+p.getName()+" won "+p.getHand().getBet()+" chips");
 
+			}
+			else {
+				System.out.println("Round " + round+": "+p.getName()+" lost "+p.getHand().getBet()+" chips");
 			}
 			index++;
 		}
-		System.out.println("dealer score is"+dealer.getHand().getScore());
+
 		if (players.get(winner).getHand().getScore()>dealer.getHand().getScore()||dealer.getHand().getScore()>21) {
-			System.out.println("this is going through lol wacko\n\n");
-			players.get(winner).wins = 1 + players.get(winner).wins;
-			players.get(winner).losses -= 1;
+			//players.get(winner).wins = 1 + players.get(winner).wins;
+			//players.get(winner).losses -= 1;
 		}
 		for(Participant p: players){
 			p.netWins=p.wins-p.losses;
 		}
 
 
-
+	round++;
 	}
 
 	/**
 	 * TODO This method should print the statistic of the game when it ends
 	 */
 	protected void printGameStatistics() {
+
 
 	}
 

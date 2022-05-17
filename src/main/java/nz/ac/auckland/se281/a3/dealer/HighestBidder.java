@@ -27,7 +27,7 @@ public class HighestBidder implements DealerStrategies {
             return Participant.Action.HOLD;
         }
 
-        if (hand.getScore()>=value || value==21) {
+        if (hand.getScore()>=value || value==21||value>21) {
             return Participant.Action.HOLD;
         }
         else {
