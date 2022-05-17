@@ -8,7 +8,7 @@ import java.util.List;
 public class DealerStratFac {
 
     public static DealerStrategies createDealerStrat(List<Player> players) {
-        for (Participant pl: players) {
+        for (Player pl: players) {
             System.out.println(pl.netWins+"\n net wins");
 
             if (pl.netWins >= 2) {

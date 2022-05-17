@@ -22,9 +22,7 @@ public class RandomStrat implements  Strats{
         @Override
         public int makeABet() {
             Random rand = new Random();
-            int bet = (rand.nextInt(100) + 1);
-            System.out.println(bet + "is the bots bet");
-            return bet;
+            return rand.nextInt(100) + 1;
         }
 
 }

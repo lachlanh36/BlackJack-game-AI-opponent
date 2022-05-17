@@ -109,7 +109,7 @@ public class BlackJack {
 
 		System.out.println("round is over");
 
-		for(Participant p: players){
+		for(Player p: players){
 
 			p.losses+=1;
 			if(p.getHand().getScore()>dealer.getHand().getScore()&&p.getHand().getScore()<=21||dealer.getHand().getScore()>21||p.getHand().isBlackJack()&&!dealer.getHand().isBlackJack()) {
@@ -127,7 +127,7 @@ public class BlackJack {
 		}
 
 
-		for(Participant p: players){
+		for(Player p: players){
 			p.netWins=p.wins-p.losses;
 		}
 
@@ -139,7 +139,7 @@ public class BlackJack {
 	 * TODO This method should print the statistic of the game when it ends
 	 */
 	protected void printGameStatistics() {
-		for(Participant p: players){
+		for(Player p: players){
 			System.out.println(p.getName()+" won "+p.wins+" times and lost "+p.losses+" times");
 
 		}
