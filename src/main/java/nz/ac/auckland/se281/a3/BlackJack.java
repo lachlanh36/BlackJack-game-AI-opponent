@@ -144,7 +144,10 @@ public class BlackJack {
 	 * TODO This method should print the statistic of the game when it ends
 	 */
 	protected void printGameStatistics() {
+		for(Participant p: players){
+			System.out.println(p.getName()+" won "+p.wins+" times and lost "+p.losses+" times");
 
+		}
 
 	}
 
