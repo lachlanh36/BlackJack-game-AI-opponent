@@ -27,7 +27,7 @@ public class NetWinner implements DealerStrategies {
                     return Participant.Action.HOLD;
                 }
 
-                if (hand.getScore()>=valToBeat || valToBeat==21) {
+                if (hand.getScore()>=valToBeat ) {
                     return Participant.Action.HOLD;
                 }
                 else {

@@ -22,8 +22,7 @@ public class HighRisk implements Strats{
 
     public int makeABet() {
             Random rand = new Random();
-            int bet = (rand.nextInt(51) + 50);
-            return bet;
+            return rand.nextInt(51) + 50;
         }
 
 }

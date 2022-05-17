@@ -8,14 +8,13 @@ import java.util.Random;
  * you should change this class for TASK 1
  */
 public class Bot extends Player {
-	private String strategyy;
-	private Strats strategy;
+	private final Strats strategy;
 
 	public Bot(String name, String strategyy) {
 		super(name);
 
 
-		this.strategyy = strategyy;
+
 		this.strategy = StratFactory.createStrat(strategyy);
 	}
 

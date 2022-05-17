@@ -2,7 +2,6 @@ package nz.ac.auckland.se281.a3.dealer;
 
 import nz.ac.auckland.se281.a3.Participant;
 import nz.ac.auckland.se281.a3.Player;
-import nz.ac.auckland.se281.a3.bot.Strats;
 
 import java.util.List;
 

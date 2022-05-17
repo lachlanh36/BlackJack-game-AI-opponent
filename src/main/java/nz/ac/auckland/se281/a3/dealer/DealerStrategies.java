@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface DealerStrategies {
 
-        public Participant.Action decideAction(Hand hand, List<Player> players);
+        Participant.Action decideAction(Hand hand, List<Player> players);
 
 }

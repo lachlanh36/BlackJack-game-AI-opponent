@@ -69,7 +69,7 @@ public class BlackJackTestSuite {
 		private ByteArrayOutputStream captureErr;
 		private PrintStream origOut;
 		private PrintStream origErr;
-		private static String delimiterRun = "---<END RUN>---";
+		private static final String delimiterRun = "---<END RUN>---";
 
 		// as mentioned in the handout each single test cannot run more than 10 seconds
 		@Rule // comment if you want to run the debug

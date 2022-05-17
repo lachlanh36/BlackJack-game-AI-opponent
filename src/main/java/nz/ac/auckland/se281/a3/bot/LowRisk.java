@@ -20,8 +20,7 @@ public class LowRisk implements Strats {
     @Override
     public int makeABet() {
         Random rand = new Random();
-        int bet = (rand.nextInt(41) + 10);
-        return bet;
+        return rand.nextInt(41) + 10;
     }
 
 }

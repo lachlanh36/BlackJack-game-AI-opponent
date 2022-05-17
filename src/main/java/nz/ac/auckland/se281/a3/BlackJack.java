@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import nz.ac.auckland.se281.a3.bot.Bot;
-import nz.ac.auckland.se281.a3.bot.StratFactory;
-import nz.ac.auckland.se281.a3.bot.Strats;
 import nz.ac.auckland.se281.a3.dealer.Dealer;
 
 /**
@@ -15,9 +13,9 @@ import nz.ac.auckland.se281.a3.dealer.Dealer;
  */
 public class BlackJack {
 
-	private List<Player> players;
+	private final List<Player> players;
 	private Dealer dealer;
-	private Deck deck;
+	private final Deck deck;
 
 	public BlackJack(Deck deck) {
 		this.deck = deck;
@@ -28,7 +26,7 @@ public class BlackJack {
 	/**
 	 * Thi constructor is for testing reasons
 	 * 
-	 * @param cards
+	 *
 	 */
 	protected BlackJack(Card... cards) {
 		this(new Deck(cards));
@@ -105,18 +103,18 @@ public class BlackJack {
 	 * TODO This method prints and updates the results (wins and losses) you should
 	 * change this method for Task 2 and Task 3
 	 */
-	int round = 1;
+
 	protected void printAndUpdateResults(int round) {
-		int highestScore=0;
-		int winner=0;
+
+
 		System.out.println("round is over");
-		int index=0;
+
 		for(Participant p: players){
 
 			p.losses+=1;
 			if(p.getHand().getScore()>dealer.getHand().getScore()&&p.getHand().getScore()<=21||dealer.getHand().getScore()>21||p.getHand().isBlackJack()&&!dealer.getHand().isBlackJack()) {
-				highestScore=p.getHand().getScore();
-				winner=index;
+
+
 				p.wins +=1;
 				p.losses -= 1;
 				System.out.println("Round " + round+": "+p.getName()+" won "+p.getHand().getBet()+" chips");
@@ -125,19 +123,16 @@ public class BlackJack {
 			else {
 				System.out.println("Round " + round+": "+p.getName()+" lost "+p.getHand().getBet()+" chips");
 			}
-			index++;
+
 		}
 
-		if (players.get(winner).getHand().getScore()>dealer.getHand().getScore()||dealer.getHand().getScore()>21) {
-			//players.get(winner).wins = 1 + players.get(winner).wins;
-			//players.get(winner).losses -= 1;
-		}
+
 		for(Participant p: players){
 			p.netWins=p.wins-p.losses;
 		}
 
 
-	round++;
+
 	}
 
 	/**
