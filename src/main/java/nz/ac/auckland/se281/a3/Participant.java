@@ -12,6 +12,10 @@ public abstract class Participant {
 	private String name;
 	private Hand hand;
 
+	public int wins;
+	public int losses;
+	public int netWins;
+
 	public Participant(String name) {
 		this.name = name;
 	}

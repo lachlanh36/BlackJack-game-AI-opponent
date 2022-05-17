@@ -106,6 +106,25 @@ public class BlackJack {
 	 * change this method for Task 2 and Task 3
 	 */
 	protected void printAndUpdateResults(int round) {
+		int highestScore=0;
+		Participant winner=null;
+		for(Participant p: players){
+			p.losses+=0;
+			if(p.getHand().getScore()>highestScore&&p.getHand().getScore()<=21) {
+				highestScore=p.getHand().getScore();
+				winner=p;
+
+			}
+		}
+		if (winner.getHand().getScore()>dealer.getHand().getScore()) {
+			winner.wins = 1 + winner.wins;
+			winner.losses -= 1;
+		}
+		for(Participant p: players){
+			p.netWins=p.wins-p.losses;
+		}
+
+
 
 	}
 
